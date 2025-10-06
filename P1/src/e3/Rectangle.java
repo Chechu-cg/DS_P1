@@ -5,9 +5,18 @@ public class Rectangle {
     // Initializes a new rectangle with the values passed by parameter .
 // Throws IllegalArgumentException if a a negative value is passed to any of
 // the dimensions .
-    public Rectangle ( int base , int height ) { }
+    public Rectangle ( int base , int height ) {
+        setBase(base);
+        setHeight(height);
+    }
     // Copy constructor
-    public Rectangle ( Rectangle r ) { }
+    public Rectangle ( Rectangle r ) {
+        if (r == null){
+            throw new IllegalArgumentException("El rectangulo no puede ser nulo");
+        }
+        this.base = r.base;
+        this.height = r.height;
+    }
     // Getters
     public int getBase () { }
     public int getHeight () { }
