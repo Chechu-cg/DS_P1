@@ -65,10 +65,18 @@ public class Rectangle {
     }
     // Ensure that this rectangle is oriented horizontally ( the base is greater
 // or equal than the height ).
-    public void putHorizontal () { }
+    public void putHorizontal () {
+        if (height > base) {
+            turn();
+        }
+    }
     // Ensure that this rectangle is oriented vertically ( the height is greater
 // or equal than the base ).
-    public void putVertical () { }
+    public void putVertical () {
+        if (base > height) {
+            turn();
+        }
+    }
     // Two rectangles are equal if the base and the height are the same .
 // It does not take into account if the rectangle is rotated .
     public boolean equals ( Object obj ) { }
