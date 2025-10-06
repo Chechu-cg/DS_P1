@@ -29,8 +29,18 @@ public class Rectangle {
         return height;
     }
     // Setters . Throw IllegalArgumentException if the parameters are negative .
-    public void setBase ( int base ) { }
-    public void setHeight ( int height ) { }
+    public void setBase ( int base ) {
+        if (base < 0) {
+            throw new IllegalArgumentException("La base no puede ser negativa: " + base);
+        }
+        this.base = base;
+    }
+    public void setHeight ( int height ) {
+        if (height < 0) {
+            throw new IllegalArgumentException("La altura no puede ser negativa: " + height);
+        }
+        this.height = height;
+    }
     // Return true if the rectangle is a square
     public boolean isSquare () { }
     // Calculate the area of the rectangle .
