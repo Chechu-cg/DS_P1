@@ -54,9 +54,15 @@ public class Rectangle {
         return 2 * (base + height);
     }
     // Calculate the length of the diagonal
-    public double diagonal () { }
+    public double diagonal () {
+        return Math.sqrt(base * base + height * height);
+    }
     // Turn this rectangle 90 degrees ( changing base by height ).
-    public void turn () { }
+    public void turn () {
+        int aux = base;
+        base = height;
+        height = aux;
+    }
     // Ensure that this rectangle is oriented horizontally ( the base is greater
 // or equal than the height ).
     public void putHorizontal () { }
