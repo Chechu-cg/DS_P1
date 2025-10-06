@@ -5,6 +5,10 @@ public class Rectangle {
     // Initializes a new rectangle with the values passed by parameter .
 // Throws IllegalArgumentException if a a negative value is passed to any of
 // the dimensions .
+
+    private int base;
+    private int height;
+
     public Rectangle ( int base , int height ) {
         setBase(base);
         setHeight(height);
@@ -18,8 +22,12 @@ public class Rectangle {
         this.height = r.height;
     }
     // Getters
-    public int getBase () { }
-    public int getHeight () { }
+    public int getBase () {
+        return base;
+    }
+    public int getHeight () {
+        return height;
+    }
     // Setters . Throw IllegalArgumentException if the parameters are negative .
     public void setBase ( int base ) { }
     public void setHeight ( int height ) { }
