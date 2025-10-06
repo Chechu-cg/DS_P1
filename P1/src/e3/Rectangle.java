@@ -42,11 +42,17 @@ public class Rectangle {
         this.height = height;
     }
     // Return true if the rectangle is a square
-    public boolean isSquare () { }
+    public boolean isSquare () {
+        return base == height;
+    }
     // Calculate the area of the rectangle .
-    public int area () { }
+    public int area () {
+        return base * height;
+    }
     // Calculate the perimeter of the rectangle .
-    public int perimeter () { }
+    public int perimeter () {
+        return 2 * (base + height);
+    }
     // Calculate the length of the diagonal
     public double diagonal () { }
     // Turn this rectangle 90 degrees ( changing base by height ).
