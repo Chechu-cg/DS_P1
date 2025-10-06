@@ -10,17 +10,30 @@ public class Rectangle {
     private int base;
     private int height;
 
+    static void main() {
+        Rectangle r1 = new Rectangle(2,3);
+        Rectangle r2 = new Rectangle(-9,-8);
+    }
+
     public Rectangle ( int base , int height ) {
-        setBase(base);
-        setHeight(height);
+        try {
+            setBase(base);
+            setHeight(height);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Error al crear el rectángulo: " + e.getMessage());
+        }
     }
     // Copy constructor
     public Rectangle ( Rectangle r ) {
-        if (r == null){
-            throw new IllegalArgumentException("El rectangulo no puede ser nulo");
+        try {
+            if (r == null) {
+                throw new IllegalArgumentException("El rectángulo no puede ser nulo");
+            }
+            this.base = r.base;
+            this.height = r.height;
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Error en constructor de copia: " + e.getMessage());
         }
-        this.base = r.base;
-        this.height = r.height;
     }
     // Getters
     public int getBase () {
@@ -31,16 +44,26 @@ public class Rectangle {
     }
     // Setters . Throw IllegalArgumentException if the parameters are negative .
     public void setBase ( int base ) {
-        if (base < 0) {
-            throw new IllegalArgumentException("La base no puede ser negativa: " + base);
+        try {
+            if (base < 0) {
+                throw new IllegalArgumentException("La base no puede ser negativa: " + base);
+            }
+            this.base = base;
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error en setBase: " + e.getMessage());
+            throw e;
         }
-        this.base = base;
     }
     public void setHeight ( int height ) {
-        if (height < 0) {
-            throw new IllegalArgumentException("La altura no puede ser negativa: " + height);
+        try {
+            if (height < 0) {
+                throw new IllegalArgumentException("La altura no puede ser negativa: " + height);
+            }
+            this.height = height;
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error en setHeight: " + e.getMessage());
+            throw e;
         }
-        this.height = height;
     }
     // Return true if the rectangle is a square
     public boolean isSquare () {
