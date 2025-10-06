@@ -1,10 +1,11 @@
 package e3;
 
+import java.util.Objects;
+
 // Represents a rectangle
 public class Rectangle {
     // Initializes a new rectangle with the values passed by parameter .
-// Throws IllegalArgumentException if a a negative value is passed to any of
-// the dimensions .
+    // Throws IllegalArgumentException if a negative value is passed to any of the dimensions .
 
     private int base;
     private int height;
@@ -64,22 +65,31 @@ public class Rectangle {
         height = aux;
     }
     // Ensure that this rectangle is oriented horizontally ( the base is greater
-// or equal than the height ).
+    // or equal than the height ).
     public void putHorizontal () {
         if (height > base) {
             turn();
         }
     }
     // Ensure that this rectangle is oriented vertically ( the height is greater
-// or equal than the base ).
+    // or equal than the base ).
     public void putVertical () {
         if (base > height) {
             turn();
         }
     }
     // Two rectangles are equal if the base and the height are the same .
-// It does not take into account if the rectangle is rotated .
-    public boolean equals ( Object obj ) { }
+    // It does not take into account if the rectangle is rotated .
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Rectangle rectangle = (Rectangle) obj;
+        return base == rectangle.base && height == rectangle.height;
+    }
+
     // It complies with the hashCode contract and is consistent with the equals .
-    public int hashCode () { }
+    public int hashCode() {
+        return Objects.hash(base, height);
+    }
+
+
 }
