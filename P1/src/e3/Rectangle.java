@@ -13,6 +13,9 @@ public class Rectangle {
     static void main() {
         Rectangle r1 = new Rectangle(2,3);
         Rectangle r2 = new Rectangle(-9,-8);
+
+        System.out.println("Miguel Mongolo");
+
     }
 
     public Rectangle ( int base , int height ) {
